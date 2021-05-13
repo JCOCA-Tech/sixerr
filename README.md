@@ -1,2 +1,2 @@
 # SIXERR
-Webdevelopment schoolproject using the "Laravel" framework
+Webdevelopment project using the "Laravel" framework
