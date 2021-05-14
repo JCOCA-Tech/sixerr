@@ -2,7 +2,7 @@
 
 ## Preview
 
-![Preview](https://github.com/JCOCA-Tech/SIXERR/blob/main/resources/images/Preview%20(2021-05-14%2021-52-40).png)
+![Preview](https://github.com/JCOCA-Tech/SIXERR/blob/main/public/png/Preview%20(2021-05-14%2021-52-40).png)
 
 
 # Laravel
