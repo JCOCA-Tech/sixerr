@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserServicesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -43,6 +44,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // blog page
 Route::resource('posts', PostsController::class);
+
+// user management page
+Route::resource('users', UsersController::class);
 
 // marketplace page
 Route::resource('userServices', UserServicesController::class);

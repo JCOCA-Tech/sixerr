@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Posts</h1>
+
+    <div class="container">
+        <h1>Posts</h1>
         @if(count($posts)>1)
         <div class="card">
             <ul class="list-group list-group-flush">
@@ -16,4 +18,6 @@
         @else
 
         @endif
+    </div>
+
 @endsection

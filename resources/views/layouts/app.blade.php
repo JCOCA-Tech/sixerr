@@ -18,10 +18,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .own-navbar-sticky-top{
+            position: fixed;
+            z-index: 999;
+            opacity:1;
+            width: 100%;
+            transition: top 0.3s
+        }
+    </style>
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav id="navbar" class="navbar navbar-expand-md navbar-light bg-white shadow-sm own-navbar-sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -47,6 +57,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/posts') }}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/users') }}">User</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/about') }}">About</a>
@@ -87,7 +100,8 @@
             </div>
         </nav>
 
-        <main class="py-4 container">
+        <main class="py-4">
+            <br><br><br>
             @yield('content')
         </main>
     </div>
