@@ -8,7 +8,7 @@
             <h3>Introduction</h3>
             <br>
             <ul>
-                <li>Who are the people behind SIXERR?</li>
+                <li>Who is behind SIXERR?</li>
                 <li>What is SIXERR?</li>
                 <li>I'm new what should I do?</li>
                 <li>Where do I ask for support?</li>
@@ -19,10 +19,11 @@
                 <li>I want to know more</li>
             </ul><br>
 
-            <h3>Who are the people behind SIXERR?</h3><br>
+            <h3>Who is behind SIXERR?</h3><br>
             <p>
-                <b>SIXERR</b> is developed by me <b>J.Coca</b> as a single individual.<br>
-                If you want to know more about <b>SIXERR</b> and my goals with the platform, you're in the right place.
+                If you're thinkning about using <b>SIXERR</b> you might want to know who you're dealing with beforehand.<br>
+                <b>SIXERR</b> is developed by me <b>J.Coca</b> as an individual. I'm a< developer and this platform is owned by me.<br>
+                You might want to know more about <b>SIXERR</b> and my goals with the platform and are in the right place here!
             </p><br>
 
             <h3>I'm new what should I do?</h3><br>

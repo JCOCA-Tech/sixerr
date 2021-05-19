@@ -14,8 +14,8 @@
         <ul class="list-group list-group-flush">
         @foreach ($users as $user)
             <li class="list-group-item">
-                <h3><a href="/posts/{{ $user->id }}">{{ $user->title }}</a></h3>
-                <small>Written at {{ $user->created_at }} by {{ $user->user_id }}</small>
+                <h3><a href="/users/{{ $user->id }}">{{ $user->name }}</a></h3>
+                <small>Joined Sixerr at {{ $user->created_at }} with id {{ $user->id }}</small>
             </li>
         @endforeach
         </ul>

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Sixerr') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <!-- Quick and dirty CSS style for the animated fixed navbar -->
     <style>
         .own-navbar-sticky-top{
             position: fixed;
@@ -33,6 +35,7 @@
     <div id="app">
         <nav id="navbar" class="navbar navbar-expand-md navbar-light bg-white shadow-sm own-navbar-sticky-top">
             <div class="container">
+                <!-- Logo which doubles as a home button -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -48,22 +51,27 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                        <!-- Back to home -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
+                        <!-- The marketplace contains all the user services -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/userServices') }}">Marketplace</a>
                         </li>
+                        <!-- The blog contains all the posts -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/posts') }}">Blog</a>
                         </li>
+                        <!-- Go to the user-manager -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/users') }}">User</a>
+                            <a class="nav-link" href="{{ url('/users') }}">Users</a>
                         </li>
+                        <!-- Helpful site for new users and troubleshooting -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/about') }}">About</a>
                         </li>
+                        <!-- Login or Register -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -77,11 +85,12 @@
                                 </li>
                             @endif
                         @else
+                            <!-- Account settings for the currently logged in user -->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-
+                                <!-- Logout of the current account -->
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -99,9 +108,10 @@
                 </div>
             </div>
         </nav>
-
+        <!-- Begin of the contents-->
         <main class="py-4">
             <br><br><br>
+            <!-- Returned views will be shown in this section (use the @extend('content') function) -->
             @yield('content')
         </main>
     </div>
