@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-use DB;
+use App\Models\User;
+use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
@@ -19,6 +20,7 @@ class PostsController extends Controller
         $posts = Post::orderBy('created_at','desc')->get();
         //$posts = DB::select('select *from posts;');
         return view('posts.index')->with('posts',$posts);
+
     }
 
     /**
@@ -86,5 +88,20 @@ class PostsController extends Controller
     public function destroy($id)
     {
         // TODO delete function @PostsController
+    }
+
+    // post search
+    public function search(Request $request)
+    {
+        $key = Str::lower(trim($request->get('query')));
+
+        $posts = Post::query()
+            ->where('title', 'like', "%{$key}%")
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('posts.index', [
+            'posts' => $posts
+        ]);
     }
 }

@@ -8,6 +8,11 @@
         <ul>
             @foreach ($services as $service )
                 <li>{{ $service }}</li>
+		<!-- TODO create search functionality  -->
+
+		<!-- TODO Add recent (most popular userservices) -->
+
+		<!-- TODO Add news section -->
             @endforeach
         </ul>
         @endif

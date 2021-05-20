@@ -6,7 +6,9 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserServicesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,11 +31,6 @@ Route::get('/', [PagesController::class, 'index']);
 // about page
 Route::get('/about', [PagesController::class, 'about']);
 
-// users page
-Route::get('/users/{id}', function ($id) {
-    return 'This is a user '.$id;
-});
-
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -50,3 +47,9 @@ Route::resource('users', UsersController::class);
 
 // marketplace page
 Route::resource('userServices', UserServicesController::class);
+
+// user search
+Route::get('/usersearch', [UsersController::class, 'search']);
+
+// post search
+Route::get('/postsearch', [PostsController::class, 'search']);

@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
     <!-- Quick and dirty CSS style for the animated fixed navbar -->
     <style>
         .own-navbar-sticky-top{
@@ -63,10 +63,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/posts') }}">Blog</a>
                         </li>
-                        <!-- Go to the user-manager -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/users') }}">Users</a>
-                        </li>
                         <!-- Helpful site for new users and troubleshooting -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/about') }}">About</a>
@@ -85,6 +81,10 @@
                                 </li>
                             @endif
                         @else
+                            <!-- Go to the user-manager -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/users') }}">UserManager</a>
+                            </li>
                             <!-- Account settings for the currently logged in user -->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

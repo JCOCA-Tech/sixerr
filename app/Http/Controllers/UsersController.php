@@ -84,4 +84,21 @@ class UsersController extends Controller
     {
         // TODO delete function @UsersController
     }
+
+    // user search
+    public function search(Request $request)
+    {
+
+        $key = $request->get('query');
+
+        $users = User::query()
+            ->where('name', 'like', "%{$key}%")
+            ->orWhere('id', 'like', "%{$key}%")
+            ->orderBy('id', 'desc')
+            ->get();
+
+        return view('users.index', [
+            'users' => $users
+        ]);
+    }
 }
