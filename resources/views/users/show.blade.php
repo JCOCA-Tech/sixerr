@@ -12,6 +12,13 @@
             <p>{{ $user->email }}</p>
             <hr>
             <small>Joined at {{$user->created_at}} with id {{ $user->id }}</small>
+            @can('delete', $user)
+                <!-- TODO show post delete button -->
+                <form  action="/postsearch" method="DELETE">
+                    <br>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            @endcan
         @endguest
     </div>
 

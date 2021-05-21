@@ -9,7 +9,7 @@
             <form class="card-body" action="/postsearch" method="GET" role="search">
                 {{ csrf_field() }}
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for a topic" name="query">
+                    <input type="text" class="form-control" placeholder="Search for a topic or username" name="query">
                     <span class="input-group-btn">
                 <button class="btn btn-primary" type="submit">Search</button>
             </span>
@@ -25,7 +25,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <h3><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h3>
-                        <small>Written by {{$post->user_id}} at {{ $post->created_at }}</small>
+                        <small>Written by {{$post->user->name}} at {{ $post->created_at }}</small>
                         @can('delete', $post)
                             <!-- TODO show post delete button -->
                             <form  action="/postsearch" method="DELETE">

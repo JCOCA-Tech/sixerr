@@ -30,7 +30,7 @@ class InstalledVersions
     'aliases' => 
     array (
     ),
-    'reference' => 'bd3005841a556e5673b9fd4a3bff41d700ac40ac',
+    'reference' => 'c126c5b7f45a0ac0aacb098ce69ac6cc7c784970',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -156,6 +156,13 @@ class InstalledVersions
       array (
       ),
       'reference' => '3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
+    ),
+    'facebook/webdriver' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '*',
+      ),
     ),
     'fakerphp/faker' => 
     array (
@@ -462,6 +469,15 @@ class InstalledVersions
         0 => '*',
       ),
     ),
+    'laravel/dusk' => 
+    array (
+      'pretty_version' => 'v6.15.0',
+      'version' => '6.15.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '45b55fa20321086c4f8cc4e712cbe54db644e21c',
+    ),
     'laravel/fortify' => 
     array (
       'pretty_version' => 'v1.7.12',
@@ -487,7 +503,7 @@ class InstalledVersions
       'aliases' => 
       array (
       ),
-      'reference' => 'bd3005841a556e5673b9fd4a3bff41d700ac40ac',
+      'reference' => 'c126c5b7f45a0ac0aacb098ce69ac6cc7c784970',
     ),
     'laravel/sail' => 
     array (
@@ -643,6 +659,15 @@ class InstalledVersions
       array (
       ),
       'reference' => 'bae7c545bef187884426f042434e561ab1ddb182',
+    ),
+    'php-webdriver/webdriver' => 
+    array (
+      'pretty_version' => '1.11.1',
+      'version' => '1.11.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'da16e39968f8dd5cfb7d07eef91dc2b731c69880',
     ),
     'phpdocumentor/reflection-common' => 
     array (

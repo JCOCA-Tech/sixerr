@@ -11,7 +11,7 @@
             <h1>{{ $post->title }}</h1>
             <p>{{ $post->body }}</p>
             <hr>
-            <small>Written by {{$post->user_id}} at {{ $post->created_at }}</small>
+            <small>Written by {{$post->user->name}} at {{ $post->created_at }}</small>
             @can('delete', $post)
                 <!-- TODO show post delete button -->
                 <form  action="/posts" method="DELETE">

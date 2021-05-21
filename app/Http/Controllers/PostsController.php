@@ -96,8 +96,12 @@ class PostsController extends Controller
         $key = Str::lower(trim($request->get('query')));
 
         $posts = Post::query()
-            ->where('title', 'like', "%{$key}%")
-            ->orderBy('created_at', 'desc')
+            ->where('posts.title', 'like', "%{$key}%")
+            ->join('users', function ($join) {
+                $join->on('posts.user_id', '=', 'users.id');
+            })
+            ->orwhere('users.name', 'like', "%{$key}%")
+            ->orderBy('posts.created_at', 'desc')
             ->get();
 
         return view('posts.index', [

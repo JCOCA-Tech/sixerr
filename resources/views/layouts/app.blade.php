@@ -81,10 +81,12 @@
                                 </li>
                             @endif
                         @else
-                            <!-- Go to the user-manager -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/users') }}">UserManager</a>
-                            </li>
+                            @if (Auth::user()->is_administrator==1)
+                                <!-- Go to the user-manager -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/users') }}">UserManager</a>
+                                </li>
+                            @endif
                             <!-- Account settings for the currently logged in user -->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

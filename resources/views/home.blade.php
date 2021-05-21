@@ -14,8 +14,12 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
-                        {{ __(URL::previous()) }}
+                        @if (Auth::user()->is_administrator==0)
+                            {{ __("You're now logged in as '".Auth::user()->name."'!") }}
+                        @elseif (Auth::user()->is_administrator==1)
+                            {{ __("You're now logged in as '".Auth::user()->name."'. '".Auth::user()->name."' is an administrator") }}
+                        @else
+                        @endif
                     </div>
                 </div>
             </div>
