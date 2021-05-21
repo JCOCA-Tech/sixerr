@@ -70,7 +70,7 @@ Now we are able to migrate and seed (creating the schema on the DB and adding s
     php artisan seed
     
 Reload your website and: voilà! You got yourself a DB!
-
+<br>
 
 # Support and use Laravel if you want to. <br>(It's FOSS and really not that bad for PHP!) :P
 
