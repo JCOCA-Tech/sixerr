@@ -3,6 +3,7 @@
 @section('content')
 
     <div class="container">
+        @include('inc.messages')
         <h1>Posts</h1>
         <!-- user search -->
         <div class="card my-4">
@@ -17,6 +18,14 @@
                 <!-- TODO add the 'order by' select option -->
             </form>
         </div>
+        <!-- Write post options -->
+        @guest
+            <a href="/login" class="btn btn-default btn-primary">Log in to write a post</a>
+            <br>
+        @else
+            <a href="/posts/create" class="btn btn-default btn-primary">Write a post</a>
+            <br>
+        @endguest
         <!-- list of all posts or search results -->
         @if(count($posts)>0)
             @foreach ($posts as $post)
@@ -25,12 +34,15 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <h3><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h3>
-                        <small>Written by {{$post->user->name}} at {{ $post->created_at }}</small>
+                        <small>Written by @if($post->user->name==Auth::user()->name)You at @else{{$post->user->name}} at @endif{{ $post->created_at }}</small>
                         @can('delete', $post)
                             <!-- TODO show post delete button -->
-                            <form  action="/postsearch" method="DELETE">
+                            <form  action="/posts/{{ $post->id }}" method="DELETE">
                                 <br>
                                 <button type="submit" class="btn btn-danger">Delete</button>
+                                @can('update', $post)
+                                    <a href="/posts/{{ $post->id }}/edit" class="btn btn-success">Edit</a>
+                                @endcan
                             </form>
                         @endcan
                     </li>

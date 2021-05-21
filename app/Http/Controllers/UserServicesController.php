@@ -17,7 +17,7 @@ class UserServicesController extends Controller
     }
     public function create()
     {
-        // TODO create function @UserServicesController
+        return view('userServices.create');
     }
     public function store(Request $request)
     {

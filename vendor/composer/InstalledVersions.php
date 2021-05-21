@@ -30,7 +30,7 @@ class InstalledVersions
     'aliases' => 
     array (
     ),
-    'reference' => 'c126c5b7f45a0ac0aacb098ce69ac6cc7c784970',
+    'reference' => 'dec2620419b636b6512bdb469ddaa49a681259d3',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -503,7 +503,7 @@ class InstalledVersions
       'aliases' => 
       array (
       ),
-      'reference' => 'c126c5b7f45a0ac0aacb098ce69ac6cc7c784970',
+      'reference' => 'dec2620419b636b6512bdb469ddaa49a681259d3',
     ),
     'laravel/sail' => 
     array (
@@ -531,6 +531,15 @@ class InstalledVersions
       array (
       ),
       'reference' => 'e2478cd0342a92ec1c8c77422553bda8ee004fd0',
+    ),
+    'laravelcollective/html' => 
+    array (
+      'pretty_version' => 'v6.2.1',
+      'version' => '6.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ae15b9c4bf918ec3a78f092b8555551dd693fde3',
     ),
     'league/commonmark' => 
     array (

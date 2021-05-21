@@ -17,11 +17,9 @@
                 <form  action="/posts" method="DELETE">
                     <br>
                     <button type="submit" class="btn btn-danger">Delete</button>
-                    <form action="/posts/edit" method="PUT">
-                        @can('update', $post)
-                            <button type="submit" class="btn btn-success">Edit</button>
-                        @endcan
-                    </form>
+                    @can('update', $post)
+                        <a href="/posts/{{ $post->id }}/edit" class="btn btn-success">Edit</a>
+                    @endcan
                 </form>
             @endcan
         @endguest

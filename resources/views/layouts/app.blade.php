@@ -112,7 +112,8 @@
         </nav>
         <!-- Begin of the contents-->
         <main class="py-4">
-            <br><br><br>
+            <br><br>
+            <br>
             <!-- Returned views will be shown in this section (use the @extend('content') function) -->
             @yield('content')
         </main>

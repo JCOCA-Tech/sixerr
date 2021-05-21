@@ -1,26 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
-        @include('inc.messages')
-        <h1>Write a Post</h1>
         @guest
             <a href="/login" class="btn btn-default btn-danger">Please log in first</a>
         @else
-            <form action="/posts" method="POST" >
-                {{csrf_field()}}
+            <a href="/userServices" class="btn btn-default btn-danger">Back</a>
+            <form>
                 <div class="form-group">
                     <label for="InputTitle">Title</label>
-                    <input type="text" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Enter Title" name="title">
+                    <input type="text" class="form-control" id="InputTitle" aria-describedby="titleHelp" placeholder="Enter Title">
                     <small id="titleHelp" class="form-text text-muted">Choose an interesting title for your post.</small>
                 </div>
                 <div class="form-group">
                     <label for="InputContent">Content</label>
-                    <textarea type="text" class="form-control" id="body" aria-describedby="contentHelp" placeholder="Enter Content" rows="11" name="body"></textarea>
+                    <input type="text" class="form-control" id="InputContent" aria-describedby="contentHelp" placeholder="Enter Content">
                     <small id="contentHelp" class="form-text text-muted">Tell us what you want to tell us.</small>
                 </div>
                 <button type="submit" class="btn btn-primary">Post</button>
-                <a href="/posts" class="btn btn-default btn-danger">Back</a>
             </form>
         @endguest
     </div>

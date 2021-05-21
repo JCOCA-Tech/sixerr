@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class PostsController extends Controller
@@ -30,7 +32,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        // TODO create function @PostsController
+        return view('posts.create');
     }
 
     /**
@@ -41,7 +43,19 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //TODO archive function @PostsController
+        $this->validate($request,[
+            'title'=>'required',
+            'body'=>'required'
+        ]);
+
+        $post = new Post;
+        $post->title=$request->input('title');
+        $post->body=$request->input('body');
+        $post->user_id=Auth::user()->id;
+        $post->created_at=Carbon::now()->toDateTimeString();
+        $post->save();
+
+        return redirect('/posts')->with('success','Posted');
     }
 
     /**
@@ -64,7 +78,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        // TODO edit function @PostsController
+        $post = Post::find($id);
+        return view('posts.edit')->with('post', $post);
     }
 
     /**
@@ -76,7 +91,19 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // TODO update function @PostsController
+        $this->validate($request,[
+            'title'=>'required',
+            'body'=>'required'
+        ]);
+
+        $post = Post::find($id);
+        $post->title=$request->input('title');
+        $post->body=$request->input('body');
+        $post->user_id=Auth::user()->id;
+        $post->created_at=Carbon::now()->toDateTimeString();
+        $post->save();
+
+        return redirect('/posts')->with('success','Post Updated');
     }
 
     /**
