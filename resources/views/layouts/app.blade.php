@@ -35,8 +35,8 @@
     <div id="app">
         <nav id="navbar" class="navbar navbar-expand-md navbar-light bg-white shadow-sm own-navbar-sticky-top">
             <div class="container">
-                <!-- Logo which doubles as a home button -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <!-- TODO Logo which doubles as a home button -->
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('svg/sixerr-logo.svg') }}" width="30px" height="30px"/>
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

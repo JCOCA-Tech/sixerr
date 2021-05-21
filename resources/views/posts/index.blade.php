@@ -26,6 +26,13 @@
                     <li class="list-group-item">
                         <h3><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h3>
                         <small>Written by {{$post->user_id}} at {{ $post->created_at }}</small>
+                        @can('delete', $post)
+                            <!-- TODO show post delete button -->
+                            <form  action="/postsearch" method="DELETE">
+                                <br>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        @endcan
                     </li>
                 </ul>
             </div>
